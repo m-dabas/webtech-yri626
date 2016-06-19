@@ -3,20 +3,20 @@
 	session_start();
 
 	include('database.php');
-
-
-	//Get data from the form
-	$content = $_POST['content'];
-	$UID = $_POST['UID'];
+	include('functions.php');
 
 	//connect to DB
 	$conn = connect_db();
-	$result = mysqli_query($conn, "SELECT * FROM users WHERE id = '$UID'");
+	$UID = sanitizeString($conn, $_POST['UID']);
+	$result = mysqli_query($conn, "SELECT * FROM users WHERE id='$UID'");
 	$row = mysqli_fetch_assoc($result);
 
+	//Get data from the form
+	$content = sanitizeString($conn, $_POST['content']);
+
 	//Fetch User information	
-	$name = $row["Name"];
-	$profile_pic = $row["profile_pic"];
+	$name = sanitizeString($conn, $row["Name"]);
+	$profile_pic = sanitizeString($conn, $row["profile_pic"]);
 
 	echo "$name";
 

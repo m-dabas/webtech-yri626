@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sign-up Page</title>
+	</head>
+	<body>
+		<form action="signup.php" method="POST">
+			<p>
+				<label>Username</label>
+				<input type="text" placeholder="Username" name="username" required>
+			</p>
+			<p>
+				<label>Password</label>
+				<input type="password" placeholder="Password" name="password" required>
+			</p>
+			<p>
+				<label>Retype Password</label>
+				<input type="password" placeholder="Retype Password" name="rpassword" required>
+			</p>
+			<p>
+				<label>Name</label>
+				<input type="text" placeholder="Name" name="name" required>
+			</p>
+			<p>
+				<label>Email</label>
+				<input type="email" placeholder="Email" name="email" required>
+			</p>
+			<p>
+				<label>Date of Birth (yyyy-mm-dd)</label>
+				<input type="date" placeholder="Date of Birth (yyyy-mm-dd)" name="dob" pattern="\d{4}-\d{2}-\d{2}" required>
+			</p>
+			<p>
+				<label>Gender (male, female, other)</label>
+				<input type="text" placeholder="Gender" name="gender" pattern="(male|female|other)" required>
+			</p>
+			<p>
+				<label>Verification Question</label>
+				<input type="text" placeholder="Verification Question" name="vq" required>
+			</p>
+			<p>
+				<label>Verification Answer</label>
+				<input type="text" placeholder="Verification Answer" name="va" required>
+			</p>
+			<p>
+				<label>Location</label>
+				<input type="text" placeholder="Location" name="location" required>
+			</p>
+			<p>
+				<label>Profile Picture URL</label>
+				<input type="url" placeholder="Profile Picture URL" name="profile_pic" required>
+			</p>
+
+			<p>	
+				<input type="submit">
+			</p>
+		</form>
+	</body>
+</html>
